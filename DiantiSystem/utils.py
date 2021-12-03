@@ -88,3 +88,7 @@ class SimpleQueue(object):
     def remove_node(self, node):
         node.prev.next = node.next
         node.next.prev = node.prev
+
+    def list(self):
+        for node in self.exist_node.values():
+            yield node.value
