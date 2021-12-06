@@ -113,17 +113,26 @@ if __name__ == '__main__':
     et._up_queues.put(20)
     et._current_level = 1
 
-    et2 = Elevator(ele)
+    et2 = Elevator(ele, name='slave1')
     et2._current_level = 2
     et2._direction = Direction.UP
     et2._up_queues.put(10)
 
-    et3 = Elevator(ele)
-    et3._current_level = 2
+    et3 = Elevator(ele, name='slave2')
+    et3._current_level = 5
     et3._direction = Direction.UP
-    et3._up_queues.put(10)
+    et3._up_queues.put(19)
 
     request = ExternalRequest(Direction.UP, 11)
+    request1 = ExternalRequest(Direction.DOWN, 5)
+    request2 = ExternalRequest(Direction.DOWN, -5)
+    request3 = ExternalRequest(Direction.UP, 50)
 
     ret = ele.hand_request(request)
-    print(ret)
+    ret1 = ele.hand_request(request1)
+    ret2 = ele.hand_request(request2)
+    ret3 = ele.hand_request(request3)
+    print(ret.name)
+    print(ret1.name)
+    print(ret2.name)
+    print(ret3.name)

@@ -17,7 +17,7 @@ from Request import ExternalRequest
 
 class Elevator(object):
     """a elevator handle exacy require to up or down"""
-    def __init__(self, elevator_system, weight_limit=2000):
+    def __init__(self, elevator_system, weight_limit=2000, name="admin"):
         self._up_queues = PriorityQueue()
         self._down_queues = PriorityQueue()
         self._up_set = set()
@@ -26,6 +26,7 @@ class Elevator(object):
         self._gate_status = GateStatus.CLOSE
         self._buttons = []
         self._weight_limit = weight_limit
+        self.name = name
         self._current_level = 10
         self._direction = Direction.IDLE
 
