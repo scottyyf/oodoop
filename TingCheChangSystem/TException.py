@@ -8,15 +8,22 @@ Email: yangyingfa@skybility.com
 Copyright: Copyright (c) 2021, Skybility Software Co.,Ltd. All rights reserved.
 Description:
 """
-
-
 class Error(Exception):
     pass
 
 
-class NotAllowedDirectionError(Error):
+class NotIntOrEnumError(Error):
     pass
 
 
-class QueueAlreadyFullError(Error):
+class SpotOccupiedError(Error):
+    pass
+
+
+class SpotRepairedError(Error):
+    """spot is in repair state"""
+    pass
+
+
+class NoSuitableSpotsError(Error):
     pass
