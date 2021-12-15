@@ -99,6 +99,9 @@ class NoConfirmState(AbstractState):
         self._vending_machine.change_to_confirm_state()
         return self._vending_machine.off_funds(False)
 
+    def cancel_transaction(self):
+        return self._vending_machine.off_funds()
+
 
 class ConfirmState(AbstractState):
     def __init__(self, vending_machine):
