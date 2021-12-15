@@ -45,7 +45,7 @@ class VendingMachine(object):
         return self._current_state.execute_transaction()
 
     def cancel_transaction(self):
-        self._current_state.cancel_transaction()
+        return self._current_state.cancel_transaction()
 
     def off_funds(self, cancel=True):
         if cancel:
@@ -137,6 +137,8 @@ if __name__ == '__main__':
 
     vm.select_items('A1')
     print(vm._current_state)
-    r = vm.execute_transaction()
+    r = vm.cancel_transaction()
     print(r)
-    print(vm._current_state)
+    r = vm.execute_transaction()
+    # print(r)
+    # print(vm._current_state)
