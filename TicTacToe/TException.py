@@ -29,3 +29,7 @@ class GameOverForStepOutError(Error):
 
 class GameOverForWin(Error):
     pass
+
+
+class NoBoardSpaceLeft(Error):
+    pass
